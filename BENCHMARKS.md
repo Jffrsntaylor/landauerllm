@@ -26,6 +26,8 @@ Reference runs and reproduction notes for the Landauer LLM. These benchmarks kee
 
 | 5   | 2000  | 32 x 256    | 512 hidden, 2 layers| = 1.6367  | RTX 3070 | Energy weight to .01, seq len to 256, hidden to 512, phase scaling to 1.618 |
 
+| 6   | 2000 | 32 x 256     | 512 hidden, 4 layers| = 1.5129  | RTX 3070 | Energy weight to .01, phase scaling to 1.618, lowered the learning rate from 3e - 3 to 1e - 3 |
+
 
 ## Reproduce Locally
 1) Install dependencies: `pip install -r requirements.txt`
