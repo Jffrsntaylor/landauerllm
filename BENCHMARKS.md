@@ -10,14 +10,22 @@ Reference runs and reproduction notes for the Landauer LLM. These benchmarks kee
 
 ## Reference Results
 
-**Used command for Benchmarks:** python train.py --data-path tiny_shakespeare.txt --steps 2000 --batch-size 32 --seq-len 256 --embed-dim 64 --hidden-dim 512 --num-layers 2 --phase-scaling 1.618 --temperature 0.05 --energy-weight 0.1 --lr 3e-3 --grad-clip 1.0 --eval-every 500 --save-every 500 --device cuda
+**Used command for Benchmarks:** python train.py --data-path tiny_shakespeare.txt --steps 2000 --batch-size 32 --seq-len 256 --embed-dim 64 
+--hidden-dim 512 --num-layers 2 --phase-scaling 1.618 --temperature 0.05 --energy-weight 0.1 --lr 3e-3 --grad-clip 1.0 
+--eval-every 500 --save-every 500 --device cuda
 
 | Run | Steps | Batch x Seq | Hidden / Layers | Val Loss (total) | Notes |
-| 1 | 2000 | 32 x 64 | 256 hidden, 2 layers | ~ 1.7100 | RTX 3070 |
-| 2 | 2000 | 32 x 64 | 256 hidden, 2 layers | = 1.7850 | RTX 3070 |
-| 3 | 2000 | 32 x 64 | 256 hidden, 2 layers | = 1.8248 | AMD Ryzen 7 5800x 8 core |
-| 4 | 2000 | 32 x 64 | 256 hidden, 2 layers | = 1.7637 | RTX 3070 | Turned down energy weight to .05 |
-| 5 | 2000 | 32 x 256 | 512 hidden, 2 layers| = 1.6367 | RTX 3070 | Energy weight to .01, seq len to 256, hidden to 512, phase scaling to 1.618 |
+
+| 1   | 2000  | 32 x 64     | 256 hidden, 2 layers | ~ 1.7100 | RTX 3070 |
+
+| 2   | 2000  | 32 x 64     | 256 hidden, 2 layers | = 1.7850 | RTX 3070 |
+
+| 3   | 2000  | 32 x 64     | 256 hidden, 2 layers | = 1.8248 | AMD Ryzen 7 5800x 8 core |
+
+| 4   | 2000  | 32 x 64     | 256 hidden, 2 layers | = 1.7637 | RTX 3070 | Turned down energy weight to .05 |
+
+| 5   | 2000  | 32 x 256    | 512 hidden, 2 layers| = 1.6367  | RTX 3070 | Energy weight to .01, seq len to 256, hidden to 512, phase scaling to 1.618 |
+
 
 ## Reproduce Locally
 1) Install dependencies: `pip install -r requirements.txt`
