@@ -11,7 +11,7 @@ Reference runs and reproduction notes for the Landauer LLM. These benchmarks kee
 ## Reference Results
 
 **Used command for Benchmarks:** python train.py --data-path tiny_shakespeare.txt --steps 2000 --batch-size 32 --seq-len 256 --embed-dim 64 
---hidden-dim 512 --num-layers 4 --phase-scaling 1.618 --temperature 0.05 --energy-weight 0.1 --lr 1e-3 --grad-clip 1.0 
+--hidden-dim 512 --num-layers 4 --phase-scaling 1.618 --temperature 0.05 --energy-weight 0.01 --lr 1e-3 --grad-clip 1.0 
 --eval-every 500 --save-every 500 --device cuda
 
 | Run | Steps | Batch x Seq | Hidden / Layers | Val Loss (total) | Notes |
